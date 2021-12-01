@@ -2,7 +2,8 @@ import TicketsList from "./TicketsList/TicketsList";
 import SortingComponent from "./SortingComponent/SortingComponent";
 import { useState } from "react";
 import FilterList from "./FilterList/FilterList";
-import { GlobalStyle, Container, Sidebar, Content } from "./App.styled";
+import { GlobalStyle, Container, Sidebar, Content, Header } from "./App.styled";
+import logo from "../img/Logo-aviasales.svg";
 
 function App() {
   const sorts = [
@@ -32,6 +33,9 @@ function App() {
   return (
     <>
       <GlobalStyle />
+      <Header>
+        <img src={logo} alt="logo" />
+      </Header>
       <Container>
         <Sidebar>
           <FilterList

@@ -7,6 +7,11 @@ export const GlobalStyle = createGlobalStyle`
     color: #4A4A4A;
   }
 `;
+export const Header = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+`;
 export const Container = styled.div`
   width: 100%;
   display: flex;
