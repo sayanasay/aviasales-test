@@ -4,6 +4,7 @@ import { getTickets } from "../../actions/ticketsActions";
 import TicketCard from "../TicketCard/TicketCard";
 import ErrorComponent from "../ErrorComponent/ErrorComponent";
 import styled from "styled-components";
+import Loader from "../Loader/Loader";
 
 const Button = styled.button`
   height: 50px;
@@ -15,6 +16,9 @@ const Button = styled.button`
   font-weight: 600;
   font-size: 12px;
   line-height: 20px;
+  &:hover {
+    background: #248fe3;
+  }
 `;
 
 const TicketsList = ({ filters, sorting }) => {
@@ -76,7 +80,7 @@ const TicketsList = ({ filters, sorting }) => {
       {error ? (
         <ErrorComponent error={error} handleClick={requestTickets} />
       ) : null}
-      {loading === 1 ? "Loading" : null}
+      {loading === 1 ? <Loader>Loading...</Loader> : null}
       {filteredTickets.map((ticket, id) => (
         <TicketCard key={id} ticket={ticket} />
       ))}

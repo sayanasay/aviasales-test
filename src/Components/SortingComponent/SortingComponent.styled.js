@@ -2,11 +2,12 @@ import styled from "styled-components";
 
 export const SortingDiv = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   margin-bottom: 20px;
   &:first-child {
-    color: red;
     border-radius: 10px;
+  }
+  @media screen and (min-width: 400px) {
+    grid-template-columns: repeat(3, 1fr);
   }
 `;
 export const RadioButton = styled.input`
@@ -25,10 +26,23 @@ export const RadioButtonLabel = styled.label`
   color: ${({ checked }) => (checked ? "#fff" : "#4A4A4A")};
   font-size: 12px;
   cursor: pointer;
-  &:first-of-type {
-    border-radius: 10px 0 0 10px;
+  transition: all 0.3s ease;
+  &:hover {
+    background: ${({ checked }) => (checked ? "#2196F3;" : "#f1fcff")};
+    color: ${({ checked }) => (checked ? "#fff" : "#2196f3;")};
   }
-  &: last-of-type {
-    border-radius: 0 10px 10px 0;
+  &:first-of-type {
+    border-radius: 10px 10px 0 0;
+  }
+  &:last-of-type {
+    border-radius: 0 0 10px 10px;
+  }
+  @media screen and (min-width: 400px) {
+    &:first-of-type {
+      border-radius: 10px 0 0 10px;
+    }
+    &:last-of-type {
+      border-radius: 0 10px 10px 0;
+    }
   }
 `;

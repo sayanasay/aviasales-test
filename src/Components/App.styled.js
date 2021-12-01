@@ -8,17 +8,29 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 export const Container = styled.div`
-  width: 754px;
+  width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin: 0 auto;
+  @media screen and (min-width: 768px) {
+    width: 754px;
+    flex-direction: row;
+  }
 `;
 export const Sidebar = styled.div`
   width: 232px;
-  margin-right: 20px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  @media screen and (min-width: 768px) {
+    margin: 0;
+  }
 `;
 export const Content = styled.div`
-  width: 502px;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  @media screen and (min-width: 768px) {
+    width: 502px;
+  }
 `;
